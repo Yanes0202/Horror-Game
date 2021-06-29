@@ -14,32 +14,24 @@ namespace Horror_Game
 {
     public partial class MainScreen : Form
     {
-        Game _greetScreen;
-        Game _proba;
+        Game game;
+        
+        
         public MainScreen()
         {
             InitializeComponent();
             this.KeyPreview = true;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _greetScreen = new Game(this);
-            Controls.Add(_greetScreen);
-            _greetScreen.BringToFront();
+            game = new Game(this);
+            Controls.Add(game);
+            game.BringToFront();
         }
 
-        private void MainTimerEvent(object sender, EventArgs e)
-        {
-
-        }
-
-        private void KeyIsUp(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Up)
-            {
-                _proba.Proba();
-            }
-        }
+       
+        
     }
 }
